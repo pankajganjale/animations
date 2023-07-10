@@ -1,0 +1,96 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  border: 1px solid teal;
+  background-color: transparent;
+  height: 50px;
+  width: 200px;
+  color: teal;
+  letter-spacing: 2px;
+  font-size: 16px;
+  position: relative;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  left: -25%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background-color: teal;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  right: -25%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background-color: teal;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+span {
+  transition: all 0.5s;
+}
+
+span::before {
+  content: '';
+  position: absolute;
+  left: 25%;
+  top: -100%;
+  width: 25%;
+  height: 100%;
+  background-color: teal;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+span::after {
+  content: '';
+  position: absolute;
+  right: 25%;
+  bottom: -100%;
+  width: 25%;
+  height: 100%;
+  background-color: teal;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+button:hover {
+  color: white;
+  border: 1px solid black;
+}
+
+button:hover::before {
+  left: 0;
+}
+
+button:hover::after {
+  right: 0;
+}
+
+button:hover span::before {
+  top: 0;
+}
+
+button:hover span::after {
+  bottom: 0;
+}
+
